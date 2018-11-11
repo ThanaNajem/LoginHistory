@@ -5,14 +5,14 @@
  
 /** @var CustomerLogin\Tracking\Block\Account\LoginHistoryPagination $block */
 ?>
+<h2 class="table-caption"><?php echo __('Login History Records') ?></h2>
 <?php if ($block->getPagerHtml()): ?>
 	<div class="login-history-toolbar toolbar bottom"><?php echo $block->getPagerHtml() ?></div>
 <?php endif ?>
 <?php $loginHistoryRecords = $block->getCustomCollection() ?>
 <?php if ($loginHistoryRecords && count($loginHistoryRecords)): ?>
-	<div class="table-wrapper login-history">
-        <table class="data table table-login-history-data history" id="my-login-history-table">
-            <caption class="table-caption"><?php echo __('Login History Record') ?></caption>
+	<div class="table-wrapper login-history"> 
+        <table class="table table-login-history-data history table-responsive" id="my-login-history-table">
             <thead>
             <tr>
                 <th scope="col" 

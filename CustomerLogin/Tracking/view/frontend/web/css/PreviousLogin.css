@@ -8,12 +8,22 @@
 	box-sizing: border-box;
 }
 
-h3{
+h3, .table-caption{
 	border-bottom: 1px solid #333;
 	text-transform: uppercase;
 	padding-bottom: 5px;
 }
 
 h5{
-	font-weight: bold
+	font-weight: bold;
+}
+
+.table-login-history-data td {
+	text-align: center;
+}
+
+.table-login-history-data th {
+	color: #401500;
+	background-color: #FFDDCC;
+	border-color: #792700;
 }
