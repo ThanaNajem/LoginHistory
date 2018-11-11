@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Thana', Inc. All rights reserved. 
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="logintracking_index_login"/>
+    <head>
+        <css src="CustomerLogin_Tracking::css/PreviousLogin.css" />
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Previous Login Data Of Current Login</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="CustomerLogin\Tracking\Block\Account\PreviousLogin" name="customer_previous_login_info" as="info" template="previouslogintransaction.phtml" cacheable="false"/> 
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Thana', Inc. All rights reserved. 
+ */
+--> 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+    <head>
+        <title>Login History</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" src_type="url" />  
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
+        <link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
+    </head>
+    <body>
+        <attribute name="class" value="account"/>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Framework\View\Element\Template" name="sidebar.main.account_nav" template="Magento_Theme::html/collapsible.phtml" before="-">
+                <arguments>
+                    <argument name="block_css" xsi:type="string">account-nav</argument>
+                </arguments>
+                <block class="Magento\Customer\Block\Account\Navigation" name="customer_account_navigation" before="-">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">nav items</argument>
+                    </arguments>
+                    <block class="Magento\Customer\Block\Account\SortLinkInterface" name="customer-account-navigation-previous-login-data-of-current-login-link">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Previous Login Data Of Current Login</argument>
+                            <argument name="path" xsi:type="string">logintracking/account/index</argument>
+                            <argument name="sortOrder" xsi:type="number">250</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Customer\Block\Account\Delimiter" name="customer-account-navigation-delimiter-1" template="Magento_Customer::account/navigation-delimiter.phtml">
+                        <arguments>
+                            <argument name="sortOrder" xsi:type="number">200</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Customer\Block\Account\SortLinkInterface" name="customer-account-navigation-history-pagination-link">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Login History</argument>
+                            <argument name="path" xsi:type="string">logintracking/account/loginhistorypagination</argument>
+                            <argument name="sortOrder" xsi:type="number">190</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
